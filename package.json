@@ -1,0 +1,27 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosiasAssamoi/pp-klauss.git"
+  },
+  "author": "JosiasAssamoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosiasAssamoi/pp-klauss/issues"
+  },
+  "homepage": "https://github.com/JosiasAssamoi/pp-klauss#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15",
+    "ts-node": "^8.7.0"
+  },
+  "dependencies": {
+    "@types/node": "^13.9.2"
+  }
+}
