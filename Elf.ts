@@ -48,7 +48,7 @@ export default class Elf {
         }
     }
 
-    look(furniture:Table |ConveyorBelt){
+    look(furniture:Table |ConveyorBelt):void{
         let message : string[] = []
          //Table
         if(furniture instanceof Table){
@@ -61,9 +61,7 @@ export default class Elf {
             }
         }
         //Convoyer Belt 
-        else{
-            
-            
+        else{ 
             if(!furniture.isBusy){
                 console.log(' -- vide --');
             }
@@ -74,51 +72,42 @@ export default class Elf {
         }
     }
 
-    put(furniture:ConveyorBelt | Table, object :PolyObject ){
-
+    put(furniture:ConveyorBelt | Table, object :PolyObject ):void{
         if(furniture instanceof Table){
             try{
                 furniture.put(furniture,object) 
             }
             catch (e){
-                console.log(e.message);
-                
-            }
-            
+                console.log(e.message); 
+            }      
         }
         else{
             try{
                 furniture.out(object)
             }
             catch (e){
-                console.log(e.message);
-                
+                console.log(e.message);   
             }
-       
-        }
-        
+        }   
     }
-    take(furniture:ConveyorBelt | Table,ndex?:number):  never |PolyObject|null {
+
+    take(furniture:ConveyorBelt | Table,ndex?:number):  never |PolyObject {
         if(furniture instanceof Table){
                 return furniture.take(furniture,ndex)
         }
         else{
-                furniture.isBusy=false
                 return furniture.take(furniture) 
         }
-    
     }
 
-    in(conveyor:ConveyorBelt){
+    in(conveyor:ConveyorBelt):void{
         try {
             conveyor.in()
         }
         catch(e){
-            console.log(e.message);
-            
+            console.log(e.message);   
         }
     }
-
 
  
 }

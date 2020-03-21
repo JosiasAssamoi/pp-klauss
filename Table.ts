@@ -17,7 +17,7 @@ export default class Table implements IFurniture  {
    
    
 
-    put(furniture :Table, object :PolyObject ) : void | never {
+     put(furniture :Table, object :PolyObject ) : void | never {
         
         
         if ( furniture.content.length == furniture.MAX_NB_OBJECTS ){

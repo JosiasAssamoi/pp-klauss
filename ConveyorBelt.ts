@@ -1,5 +1,6 @@
 import IFurniture, {IfurnitureException} from './IFurniture'
 import PolyObject from './PolyObject'
+import {isNull} from 'lodash'
 
 export default class ConveyorBelt implements IFurniture {
 private _isBusy : boolean = false
@@ -29,13 +30,17 @@ get isBusy(){
                 furniture._isBusy = true
         }
     }
-     take(furniture:ConveyorBelt ) {
+     take(furniture:ConveyorBelt ) : PolyObject | never {
          
-        if(!furniture.isBusy ){
-          throw new IfurnitureException(`Sorry the conveyor is empty`)
-        } 
-        else{
+        if (!isNull(furniture.item) && furniture.isBusy ){
+            furniture.isBusy=false  
             return furniture.item
+        }
+        else if(!furniture.isBusy){
+            throw new IfurnitureException(`Sorry the conveyor is empty`)
+        }
+        else{
+            throw new IfurnitureException(`Sorry the item is null`)
         }
      }
 

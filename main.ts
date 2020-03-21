@@ -83,13 +83,13 @@ majdi.in(conveyor)
 majdi.look(conveyor)
 // on envoit un jouet non emballé mais erreur car  on a pas recupere lobjet issu du majdi.in(conveyor)
 majdi.put(conveyor,goku)
-// on lenleve
-
+// on lenleve du tapis
 try{
   majdi.take(conveyor)
 }
 catch(e){
-
+  console.log(e.message);
+  
 }
 // on retente lenvoi de goku au perenoel 
 majdi.put(conveyor,goku)
@@ -97,13 +97,9 @@ majdi.put(conveyor,goku)
 try{
   //recupere l'objet n°2 donc Pony ( index a 0)
   const popony = majdi.take(table,1)
-  if(popony instanceof PolyObject){
-    majdi.put(conveyor,popony)
-  }
-     
+  majdi.put(conveyor,popony)    
 }
 catch(e){
-
 }
 
 

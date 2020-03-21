@@ -5,7 +5,7 @@ import ConveyorBelt from './ConveyorBelt'
 export default interface Ifurniture {
 
      put(furniture:ConveyorBelt | Table, object :PolyObject ) : void 
-     take(furniture:ConveyorBelt | Table,ndex?:number) : PolyObject | null 
+     take(furniture:ConveyorBelt | Table,ndex?:number) : PolyObject | never
 
 }
 
